@@ -5,10 +5,9 @@ class AbstractAPI(ABC):
     """Абстрактный класс для работы с API платформ с вакансиями"""
 
     @abstractmethod
-    def _connect_to_api(self, param: str) -> list[dict] | None:
+    def _connect_to_api(self, query_parameters: str) -> list[dict] | None:
         """Подключение к API"""
         pass
-
 
     @abstractmethod
     def get_vacancies(self, search_query: str) -> list[dict]:
