@@ -1,3 +1,6 @@
+import json
+
+
 class Vacancy:
 
     __slots__ = (
@@ -22,7 +25,7 @@ class Vacancy:
             self.id_vacancy = vacancy["id"]
             self.name_vacancy = vacancy["name"]
             self.professional_roles = vacancy["professional_roles"]
-            self.salary = Vacancy.__verify_data(vacancy["salary"])
+            self.salary = Vacancy.__verify_salary(vacancy["salary"])
             self.area = vacancy["area"]
             self.employer = vacancy["employer"]
             self.employment = vacancy["employment"]
@@ -43,8 +46,11 @@ class Vacancy:
     def __repr__(self):
         return f"name: {self.name_vacancy}, salary: {self.salary}, url: {self.apply_alternate_url}, snippet: {self.snippet}"
 
+    def __str__(self):
+        return "{" + f"name: {self.name_vacancy}, salary: {self.salary}, url: {self.apply_alternate_url}" + "}"
+
     @classmethod
-    def __verify_data(cls, value: dict | float | None) -> float:
+    def __verify_salary(cls, value: dict | float | None) -> float:
         """Верификация данных по зарплате"""
 
         if value is None:
@@ -62,3 +68,28 @@ class Vacancy:
                 return 0
         else:
             return value
+
+    @classmethod
+    def cast_to_object_list(cls, vacancies: list[dict]):
+        """Преобразование списка словарей вакансий в список экземпляров класса Vacancy"""
+
+        vacancies_obj = []
+        for item in vacancies:
+            # Создаём объект и добавляем его в список
+            if "id" in item:
+                vacancy = Vacancy(item)
+                vacancies_obj.append(vacancy)
+
+        return vacancies_obj
+
+
+    def to_dict(self) -> dict:
+
+        vacancy_dict = dict()
+        vacancy_dict["id"] = self.id_vacancy
+        vacancy_dict["name"] = self.name_vacancy
+        vacancy_dict["salary"] = self.salary
+        vacancy_dict["url"] = self.apply_alternate_url
+        vacancy_dict["snippet"] = self.snippet
+
+        return vacancy_dict
