@@ -11,7 +11,7 @@ class AbstractStorage(ABC):
         pass
 
     @abstractmethod
-    def delete_vacancy(self, vacancy_id) -> None:
+    def delete_vacancy(self, vacancy_id: str) -> None:
         """Удаляет вакансию из файла по id"""
         pass
 

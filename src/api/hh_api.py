@@ -1,5 +1,5 @@
 import json
-from pprint import pprint
+from typing import Any
 
 import requests
 
@@ -9,7 +9,7 @@ from src.api.abstract_api import AbstractAPI
 class HeadHunterAPI(AbstractAPI):
     """Класс для получения вакансий через API"""
 
-    def _connect_to_api(self, query_parameters: str) -> dict | None:
+    def _connect_to_api(self, query_parameters: str) -> dict | Any | None:
 
         url = "https://api.hh.ru/vacancies"
 

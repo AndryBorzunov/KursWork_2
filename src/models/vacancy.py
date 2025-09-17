@@ -1,4 +1,4 @@
-import json
+from typing import Any
 
 
 class Vacancy:
@@ -36,21 +36,21 @@ class Vacancy:
             self.apply_alternate_url = vacancy["apply_alternate_url"]
             self.snippet = vacancy["snippet"]
 
-    def __lt__(self, other):
+    def __lt__(self, other: Any) -> bool:
         if not isinstance(other, (float, Vacancy)):
             raise TypeError("Операнд справа должен иметь тип float или Vacancy")
 
         sc = other if isinstance(other, float) else other.salary
         return self.salary < sc
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"name: {self.name_vacancy}, salary: {self.salary}, url: {self.apply_alternate_url}, snippet: {self.snippet}"
 
-    def __str__(self):
+    def __str__(self) -> str:
         return "{" + f"name: {self.name_vacancy}, salary: {self.salary}, url: {self.apply_alternate_url}" + "}"
 
     @classmethod
-    def __verify_salary(cls, value: dict | float | None) -> float:
+    def __verify_salary(cls, value: dict | float | None) -> float | Any:
         """Верификация данных по зарплате"""
 
         if value is None:
@@ -70,7 +70,7 @@ class Vacancy:
             return value
 
     @classmethod
-    def cast_to_object_list(cls, vacancies: list[dict]):
+    def cast_to_object_list(cls, vacancies: list[dict]) -> list[Any]:
         """Преобразование списка словарей вакансий в список экземпляров класса Vacancy"""
 
         vacancies_obj = []
@@ -81,7 +81,6 @@ class Vacancy:
                 vacancies_obj.append(vacancy)
 
         return vacancies_obj
-
 
     def to_dict(self) -> dict:
 
