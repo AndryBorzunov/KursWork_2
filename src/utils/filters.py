@@ -42,3 +42,22 @@ def filter_by_solary(vacancies: List[Vacancy], salary_range: Tuple[float, float]
             result_list.append(vacancy)
 
     return result_list
+
+
+def get_top_vacancies(vacancies: List[Vacancy], top_n: int) -> List[Vacancy]:
+    """Выборка нескольких топовых вакансий"""
+
+    top_vacancies = []
+    for index, item in enumerate(vacancies):
+        if index < top_n:
+            top_vacancies.append(item)
+        else:
+            break
+
+    return top_vacancies
+
+def sort_vacancies(vacancies: List[Vacancy]) -> List[Vacancy]:
+    """Сортировка по зарплате (по убыванию)"""
+
+    vacancies.sort(key=lambda x: x.salary, reverse=True)
+    return vacancies
