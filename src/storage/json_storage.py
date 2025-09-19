@@ -16,7 +16,7 @@ class JsonStorage(AbstractStorage):
         self.__filename = filename
         self.__vacancies_saved = []
 
-    def __read_vacancy(self) -> List[Dict[str, Any]]:
+    def _read_vacancy(self) -> List[Dict[str, Any]]:
         """Чтение вакансий из файла"""
         try:
             with open(self.__filename, "r", encoding="utf-8") as file:
@@ -57,7 +57,7 @@ class JsonStorage(AbstractStorage):
     def add_vacancy(self, vacancy: Dict[str, Any]) -> None:
         """Добавление вакансии"""
 
-        vacancy_saved = self.__read_vacancy()
+        vacancy_saved = self._read_vacancy()
         if len(vacancy_saved) == 0:
             vacancy_saved.append(vacancy)
 
@@ -100,3 +100,7 @@ class JsonStorage(AbstractStorage):
             filtered_dicts.append(item.to_dict())
 
         return filtered_dicts
+
+    @property
+    def vacancies(self):
+        return self.__vacancies_saved

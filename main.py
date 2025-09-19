@@ -82,6 +82,11 @@ def user_interaction():
     # Выборка первых top_n вакансий
     top_vacancies = get_top_vacancies(ranged_vacancies, top_n)
 
+    # Добавление вакансий в json файл
+    js = JsonStorage("data/vacancies.json")
+    for item in top_vacancies:
+        js.add_vacancy(item.to_dict())
+
     print(f"Найдено {hh_api.found_dict['found']} вакансий")
 
     #pprint(top_vacancies)

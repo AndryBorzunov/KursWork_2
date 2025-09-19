@@ -1,4 +1,3 @@
-import json
 from typing import Any
 
 import requests
@@ -30,10 +29,10 @@ class HeadHunterAPI(AbstractAPI):
 
         response = requests.get(self.__url, params, headers=headers)
 
-        if response.status_code == 200:
-            return response.json()
-        else:
-            return None
+        #if response.status_code == 200:
+        return response.json()
+        #else:
+        #    return None
 
     def get_vacancies(self, search_query: str) -> list[dict] | None:
         """Получение вакансий через API Head Hunter"""
@@ -85,14 +84,13 @@ class HeadHunterAPI(AbstractAPI):
                         vacancy["snippet"] = item["snippet"]
 
                     vacancies.append(vacancy)
-                    counter += 1
+                    #counter += 1
 
                 if counter == 0:
-                    #vacancies.append(found_dict)
+                    self.__found_dict = {"found": response["found"], "page": response["page"],
+                                         "per_page": response["per_page"]}
                     break
                 else:
-                    self.__found_dict = {"found": response["found"], "page": response["page"],
-                                  "per_page": response["per_page"]}
                     self.__page += 1
 
         return vacancies
