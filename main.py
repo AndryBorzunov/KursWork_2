@@ -1,22 +1,21 @@
 from src.api.hh_api import HeadHunterAPI
 from src.models.vacancy import Vacancy
 from src.storage.json_storage import JsonStorage
-from src.utils.filters import filter_vacancies, filter_by_solary, get_top_vacancies, sort_vacancies
-
+from src.utils.filters import filter_by_solary, filter_vacancies, get_top_vacancies, sort_vacancies
 
 # Создание экземпляра класса для работы с API сайтов с вакансиями
-#hh_api = HeadHunterAPI()
+# hh_api = HeadHunterAPI()
 
 # Получение вакансий с hh.ru в формате JSON
-#vacancy_list = hh_api.get_vacancies(
+# vacancy_list = hh_api.get_vacancies(
 #    '{"text": "NAME:python and Удалённо", "area": "1", "page": "0", "per_page": "100"}'
-#)
+# )
 
 # Преобразование набора данных из JSON в список объектов
-#vacancies_list = Vacancy.cast_to_object_list(vacancy_list)
+# vacancies_list = Vacancy.cast_to_object_list(vacancy_list)
 
 # Сортировка списка по зарплате
-#vacancies_list.sort(key=lambda x: x.salary, reverse=True)
+# vacancies_list.sort(key=lambda x: x.salary, reverse=True)
 
 # Пример работы конструктора класса с одной вакансией
 vacancy = Vacancy(
@@ -44,21 +43,21 @@ def print_vacancies(vacancies: list[Vacancy]) -> None:
         print(f"{item.name_vacancy}")
         print(f"Зарплата: {item.salary}")
         print(f"Ссылка на вакансию: {item.url_vacancy}")
-        #print(f"Формат работы: {item.work_format}")
+        # print(f"Формат работы: {item.work_format}")
         print(f"Навыки: {item.snippet['Навыки']}")
         print(f"Обязанности: {item.snippet['Обязанности']}")
         print()
 
 
 # Функция для взаимодействия с пользователем
-def user_interaction():
+def user_interaction() -> None:
     platforms = ["HeadHunter"]
     print(f"Платформа для поиска вакансий: {platforms} ")
 
     search_query = input("Введите поисковый запрос: ")
     top_n = int(input("Введите количество вакансий для вывода в топ N: "))
     filter_words = input("Введите ключевые слова для фильтрации вакансий: ").split()
-    salary_range = input("Введите диапазон зарплат: ").split("-") # Пример: 100000 - 150000
+    salary_range = input("Введите диапазон зарплат: ").split("-")  # Пример: 100000 - 150000
 
     # Создание экземпляра класса для работы с API сайтов с вакансиями
     hh_api = HeadHunterAPI()
@@ -89,7 +88,7 @@ def user_interaction():
 
     print(f"Найдено {hh_api.found_dict['found']} вакансий")
 
-    #pprint(top_vacancies)
+    # pprint(top_vacancies)
     print_vacancies(top_vacancies)
 
 

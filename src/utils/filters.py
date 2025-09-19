@@ -56,6 +56,7 @@ def get_top_vacancies(vacancies: List[Vacancy], top_n: int) -> List[Vacancy]:
 
     return top_vacancies
 
+
 def sort_vacancies(vacancies: List[Vacancy]) -> List[Vacancy]:
     """Сортировка по зарплате (по убыванию)"""
 

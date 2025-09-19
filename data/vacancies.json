@@ -1,0 +1,112 @@
+[
+    {
+        "id": "124295390",
+        "name": "Data Scientist",
+        "salary": 300000,
+        "url": "https://hh.ru/applicant/vacancy_response?vacancyId=124295390",
+        "snippet": {
+            "Навыки": "Уверенное владение стеком современного ML-инженера: <highlighttext>Python</highlighttext> (Pandas, NumPy, SciPy, CatBoost, PyTorch), No-SQL & SQL базы данных, понимание принципов и...",
+            "Обязанности": "Создание и поддержка общих ML-библиотек, поддержание архитектуры среды разработки моделей. <highlighttext>Python</highlighttext>. SQL. A/B тесты. Математическая статистика. "
+        }
+    },
+    {
+        "id": "125482794",
+        "name": "Fullstack-разработчик",
+        "salary": 300000,
+        "url": "https://hh.ru/applicant/vacancy_response?vacancyId=125482794",
+        "snippet": {
+            "Навыки": "Уверенные знания одного языков: Java, C#, <highlighttext>Python</highlighttext>. Опыт с PostgreSQL и InfluxDB. Администрирование Linux-систем. Базовое понимание сетей (HTTP, WebSockets...",
+            "Обязанности": "Компания Контроль Техники — интегратор систем мониторинга транспорта и расхода топлива. Работаем по всему Казахстану, развиваем собственные продукты, резиденты Astana Hub. "
+        }
+    },
+    {
+        "id": "124816261",
+        "name": "Старший инженер данных отдела разработки аналитических систем",
+        "salary": 300000,
+        "url": "https://hh.ru/applicant/vacancy_response?vacancyId=124816261",
+        "snippet": {
+            "Навыки": "Углубленное знание SQL, <highlighttext>Python</highlighttext>/Scala для обработки данных. Опыт работы с ETL-инструментами (Apache Airflow, Kafka). Навыки настройки и оптимизации...",
+            "Обязанности": "Создание и оптимизация ETL/ELT-процессов для интеграции данных из разнородных источников (внешние данные о рисках, файловые хранилища и др..."
+        }
+    },
+    {
+        "id": "124264976",
+        "name": "Начальника отдела системной архитектуры и анализа данных",
+        "salary": 300000,
+        "url": "https://hh.ru/applicant/vacancy_response?vacancyId=124264976",
+        "snippet": {
+            "Навыки": "...Snowflake, Greenplum, Vertica, Impala, Hive, Google BigQuery, AWS Redshift, Spark. Отличные знания SQL (желательно ClickHouse). Отличные знания <highlighttext>Python</highlighttext> / AirFlow / DBT.",
+            "Обязанности": "Осуществление общего руководства и планирования работы отдела. Разработка архитектуры витрин, постановка задач на DWH, проверка качества данных. Анализ и исследование..."
+        }
+    },
+    {
+        "id": "124441237",
+        "name": "Разработчик ERP Odoo",
+        "salary": 300000,
+        "url": "https://hh.ru/applicant/vacancy_response?vacancyId=124441237",
+        "snippet": {
+            "Навыки": "Опыт работы с ERP-системами (желательно Odoo). Отличное знание <highlighttext>Python</highlighttext>, понимание принципов ORM. Опыт работы с PostgreSQL и оптимизацией запросов. ",
+            "Обязанности": "Разработка и настройка модулей ERP-платформы (backend + frontend) на базе Odoo. Адаптация бизнес-логики под требования заказчика. "
+        }
+    },
+    {
+        "id": "125520432",
+        "name": "Программист",
+        "salary": 300000,
+        "url": "https://hh.ru/applicant/vacancy_response?vacancyId=125520432",
+        "snippet": {
+            "Навыки": "Программирование и IT: Базовые знания <highlighttext>Python</highlighttext> (для написания скриптов автоматизации, работы с данными). Знание SQL (для работы с базами данных...",
+            "Обязанности": null
+        }
+    },
+    {
+        "id": "121777096",
+        "name": "Data Engineer \\ Инженер данных",
+        "salary": 280000,
+        "url": "https://hh.ru/applicant/vacancy_response?vacancyId=121777096",
+        "snippet": {
+            "Навыки": "Опыт на позиции Инженера данных от 2-х лет. Отличное знание <highlighttext>Python</highlighttext>. Опыт оптимизации SQL-запросов. Опыт работы с БД...",
+            "Обязанности": "Автоматизация процессов: разработка и внедрение скриптов и инструментов для автоматизации работы с данными. Анализ источников данных. Создание и поддержка ETL..."
+        }
+    },
+    {
+        "id": "125384453",
+        "name": "Системный аналитик",
+        "salary": 280000,
+        "url": "https://hh.ru/applicant/vacancy_response?vacancyId=125384453",
+        "snippet": {
+            "Навыки": "Базовые знания языков программирования и работы с данными: SQL, <highlighttext>Python</highlighttext>. - Опыт работы с API (REST, JSON/XML, HTTP). - ",
+            "Обязанности": "2. Заказная разработка аналитических систем. Когда у нашего клиента есть специфичный запрос, мы разрабатываем аналитические системы с нуля. "
+        }
+    },
+    {
+        "id": "125527317",
+        "name": "Data Scientist/Аналитик данных (Москва_гибрид)",
+        "salary": 276000,
+        "url": "https://hh.ru/applicant/vacancy_response?vacancyId=125527317",
+        "snippet": {
+            "Навыки": "Уверенное владение <highlighttext>Python</highlighttext> и основными библиотеками для анализа и визуализации данных, классического ML. Знание SQL. Опыт командной разработки (git). ",
+            "Обязанности": "Разрабатывать модели и проверять гипотезы. Проводить исследования и анализировать данные для решения бизнес-задач. Разрабатывать и поддерживать пайплайны данных. "
+        }
+    },
+    {
+        "id": "125270081",
+        "name": "Разработчик (Python Django)",
+        "salary": 300000,
+        "url": "https://hh.ru/applicant/vacancy_response?vacancyId=125270081",
+        "snippet": {
+            "Навыки": "Опыт от 6-ти лет разработки на следующем стеке: <highlighttext>Python</highlighttext>\\Django, PostgreSQL, REST API, GraphQL, Redis, ClickHouse, RabbitMQ, Kafka, Swagger...",
+            "Обязанности": "Участие в создании cloud native решений. Развитие бэкенда (<highlighttext>Python</highlighttext>\\Django) функционально насыщенной логистической платформы с веб-клиентом на Angular и..."
+        }
+    },
+    {
+        "id": "125420993",
+        "name": "Data Engineer (LLM)",
+        "salary": 270000,
+        "url": "https://hh.ru/applicant/vacancy_response?vacancyId=125420993",
+        "snippet": {
+            "Навыки": "Уверенный SQL (аналитический, оконные функции, оптимизация). Опыт работы с <highlighttext>Python</highlighttext> для разработки пайплайнов/утилит. Опыт с Airflow (DAG, зависимости, сенсоры...",
+            "Обязанности": "Интегрировать данные из бизнес-систем (таких как ERP, CRM, биллинги, лог-шины и API), консолидировать разрозненные данные. Разрабатывать и обслуживать..."
+        }
+    }
+]

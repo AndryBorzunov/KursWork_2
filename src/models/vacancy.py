@@ -82,7 +82,7 @@ class Vacancy:
             return value
 
     @classmethod
-    def __verify_snippet(cls, value: dict[str, Any] | str | None) -> dict[str, Any] | str:
+    def __verify_snippet(cls, value: dict[str, Any] | str | None) -> dict[str, Any] | str | None:
         """Верификация данных по требованиям к кандидату"""
 
         if isinstance(value, dict):
@@ -96,7 +96,6 @@ class Vacancy:
 
         else:
             return value
-
 
     @classmethod
     def cast_to_object_list(cls, vacancies: list[dict]) -> list[Any]:
@@ -127,21 +126,21 @@ class Vacancy:
         return self.__salary
 
     @property
-    def id_vacancy(self) -> str:
+    def id_vacancy(self) -> Any:
         return self.__id_vacancy
 
     @property
-    def name_vacancy(self) -> str:
+    def name_vacancy(self) -> Any:
         return self.__name_vacancy
 
     @property
-    def work_format(self) -> str:
+    def work_format(self) -> Any:
         return self.__work_format
 
     @property
-    def url_vacancy(self) -> str:
-        return  self.__apply_alternate_url
+    def url_vacancy(self) -> Any:
+        return self.__apply_alternate_url
 
     @property
-    def snippet(self) -> str | dict[str, Any]:
+    def snippet(self) -> str | dict[str, Any] | None:
         return self.__snippet

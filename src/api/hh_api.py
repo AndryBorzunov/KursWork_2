@@ -8,34 +8,34 @@ from src.api.abstract_api import AbstractAPI
 class HeadHunterAPI(AbstractAPI):
     """Класс для получения вакансий через API"""
 
-    __url: str    # Адрес платформы
-    __page: int   # Страница запроса
-    __found_dict: dict[str, Any]   # Результат запроса
+    __url: str  # Адрес платформы
+    __page: int  # Страница запроса
+    __found_dict: dict[str, Any]  # Результат запроса
 
-    def __init__(self):
+    def __init__(self) -> None:
         """Инициализация переменных"""
 
         self.__url = "https://api.hh.ru/vacancies"
         self.__page = 0
         self.__found_dict = dict()
 
-
     def _connect_to_api(self, query_parameters: dict[str, Any]) -> dict | Any | None:
+        """Запрос данных с сервиса"""
 
-        params = query_parameters #json.loads(query_parameters)
+        params = query_parameters  # json.loads(query_parameters)
         headers = {"HH-User-Agent": "Kurswork2/1.0 (andry73@yandex.ru)"}
 
         print(f"Идет поиск вакансий - страница {self.__page}")
 
         response = requests.get(self.__url, params, headers=headers)
 
-        #if response.status_code == 200:
-        return response.json()
-        #else:
-        #    return None
+        if response.status_code == 200:
+            return response.json()
+        else:
+            return None
 
     def get_vacancies(self, search_query: str) -> list[dict] | None:
-        """Получение вакансий через API Head Hunter"""
+        """Получение вакансий через API Head Hunter, генерация запросов"""
 
         # Формируем строку запроса
         query_dict = dict()
@@ -43,9 +43,9 @@ class HeadHunterAPI(AbstractAPI):
         query_dict["page"] = str(self.__page)
         query_dict["per_page"] = "100"
 
-        #params = 'f{"text": {search_query}, "page": {self.__page}, "per_page": "100"}'
+        # params = 'f{"text": {search_query}, "page": {self.__page}, "per_page": "100"}'
 
-        vacancies = []
+        vacancies: list[dict] = []
 
         while True:
             query_dict["page"] = str(self.__page)
@@ -84,14 +84,18 @@ class HeadHunterAPI(AbstractAPI):
                         vacancy["snippet"] = item["snippet"]
 
                     vacancies.append(vacancy)
-                    #counter += 1
+                    counter += 1
 
                 if counter == 0:
-                    self.__found_dict = {"found": response["found"], "page": response["page"],
-                                         "per_page": response["per_page"]}
                     break
                 else:
                     self.__page += 1
+
+                self.__found_dict = {
+                    "found": response["found"],
+                    "page": response["page"],
+                    "per_page": response["per_page"],
+                }
 
         return vacancies
 
